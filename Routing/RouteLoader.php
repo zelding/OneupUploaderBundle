@@ -9,10 +9,12 @@ use Symfony\Component\Routing\RouteCollection;
 
 class RouteLoader extends Loader
 {
+    protected $config;
     protected $registry;
 
-    public function __construct(ControllerRegistry $registry)
+    public function __construct(array $config, ControllerRegistry $registry)
     {
+        $this->config = $config;
         $this->registry = $registry;
     }
 
@@ -27,19 +29,18 @@ class RouteLoader extends Loader
     {
         $collection = new RouteCollection();
 
-        /** @var array $controllers */
-        $controllers = $this->registry->getControllers();
+        foreach ($this->config['mappings'] as $name => $mapping) {
+            $controller = $this->registry->getController($mapping['frontend']);
 
-        foreach ($controllers as $key => $controller) {
             // Create a configured route object
-            $route = new Route(sprintf('/_uploader/%s/upload', $key));
+            $route = new Route(sprintf('/_uploader/%s/upload', $name));
             $route->setMethods(['POST', 'PUT', 'PATCH']);
             $route->setDefaults([
                 '_controller' => sprintf(get_class($controller), ':upload'),
                 '_format' => 'json'
             ]);
 
-            $collection->add(sprintf('_uploader_upload_%s', $key), $route);
+            $collection->add(sprintf('_uploader_upload_%s', $name), $route);
         }
 
         return $collection;

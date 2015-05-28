@@ -14,17 +14,17 @@ class ControllerRegistry
     /**
      * Add a controller to the registry.
      *
-     * @param string $key
+     * @param string $type
      * @param AbstractUploadController $controller
      * @return $this
      */
-    public function addController($key, AbstractUploadController $controller)
+    public function addController($type, AbstractUploadController $controller)
     {
-        if (array_key_exists($key, $this->controllers)) {
-            throw new \InvalidArgumentException(sprintf('The controller type "%" is already registered', $key));
+        if (array_key_exists($type, $this->controllers)) {
+            throw new \InvalidArgumentException(sprintf('The controller type "%" is already registered.', $type));
         }
 
-        $this->controllers[$key] = $controller;
+        $this->controllers[$type] = $controller;
 
         return $this;
     }
@@ -38,5 +38,20 @@ class ControllerRegistry
     public function getControllers()
     {
         return $this->controllers;
+    }
+
+    /**
+     * Get a specific controller.
+     *
+     * @param $type
+     * @return AbstractUploadController
+     */
+    public function getController($type)
+    {
+        if (!array_key_exists($type, $this->controllers)) {
+            throw new \InvalidArgumentException(sprintf('No controller of type "%s" is registered."', $type));
+        }
+
+        return $this->controllers[$type];
     }
 }

@@ -9,6 +9,7 @@
     
     <services>
         <service id="oneup_uploader.routing.loader" class="%oneup_uploader.routing.loader.class%" public="false">
+            <argument>%oneup_uploader.config%</argument>
             <argument type="service" id="oneup_uploader.controller_registry" />
             <tag name="routing.loader" />
         </service>
