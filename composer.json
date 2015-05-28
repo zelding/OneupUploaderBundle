@@ -19,6 +19,6 @@
     "minimum-stability": "beta",
 
     "autoload": {
-        "psr-4": { "Oneup\\UploaderBundle": "" }
+        "psr-4": { "Oneup\\UploaderBundle\\": "" }
     }
 }
