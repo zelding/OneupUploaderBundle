@@ -1,0 +1,24 @@
+{
+    "name": "oneup/uploader-bundle",
+    "type": "symfony-bundle",
+    "homepage": "http://1up.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jim Schmid",
+            "email": "js@1up.io",
+            "homepage": "http://1up.io",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "symfony/framework-bundle": "~2.7"
+    },
+
+    "minimum-stability": "beta",
+
+    "autoload": {
+        "psr-4": { "Oneup\\UploaderBundle": "" }
+    }
+}
