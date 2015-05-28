@@ -8,7 +8,7 @@
     </parameters>
     
     <services>
-        <service id="oneup_uploader.routing.loader" class="%oneup_uploader.routing.loader.class%">
+        <service id="oneup_uploader.routing.loader" class="%oneup_uploader.routing.loader.class%" public="false">
             <tag name="routing.loader" />
         </service>
     </services>
