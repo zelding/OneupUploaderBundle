@@ -1,9 +1,9 @@
 {
-    "name": "oneup/uploader-bundle",
+    "name": "zedling/uploader-bundle",
     "type": "symfony-bundle",
-    "description": "Handles multi file uploads in Symfony2. Features included: Chunked upload, Orphans management, Gaufrette support.",
+    "description": "Handles multi file uploads in Symfony2. Features included: Chunked upload, Orphans management, Gaufrette support. Forked from https://github.com/1up-lab/OneupUploaderBundle",
     "keywords": ["fileupload", "upload", "FineUploader", "blueimp", "jQuery File Uploader", "YUI3 Uploader", "Uploadify", "FancyUpload", "MooUpload", "Plupload", "Dropzone"],
-    "homepage": "http://1up.io",
+    "homepage": "",
     "license": "MIT",
     "authors": [
         {
@@ -11,8 +11,18 @@
             "email": "js@1up.io",
             "homepage": "http://1up.io",
             "role": "Developer"
+        }, {
+            "name": "Kristof Dekany",
+            "email": "gammaray.zedling@gmail.com",
+            "homepage": "http://lyozsi.net",
+            "role": "Developer"
         }
     ],
+
+    "support": {
+        "email": "gammaray.zedling@gmail.com",
+        "doc": "https://github.com/zelding/OneupUploaderBundle/blob/master/Resources/doc/index.md"
+    },
 
     "require": {
         "php":">=5.4",
@@ -29,6 +39,10 @@
         "symfony/browser-kit": "2.*|~3.0",
         "phpunit/phpunit": "~4.4",
         "oneup/flysystem-bundle": "^1.2"
+    },
+
+    "replace": {
+        "oneup/uploader-bundle": "1.*"
     },
 
     "suggest": {

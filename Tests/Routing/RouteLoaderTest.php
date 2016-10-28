@@ -13,14 +13,18 @@ class RouteLoaderTest extends \PHPUnit_Framework_TestCase
 
         $routeLoader = new RouteLoader(array(
             'cat' => array($cat, array(
-                'enable_progress' => false,
-                'enable_cancelation' => false,
-                'route_prefix' => ''
+                'enable_progress'            => false,
+                'enable_cancelation'         => false,
+                'route_prefix'               => '',
+                'frontend'                   => '',
+                'enable_concurrent_chunking' => false
             )),
             'dog' => array($dog, array(
-                'enable_progress' => true,
-                'enable_cancelation' => true,
-                'route_prefix' => ''
+                'enable_progress'            => true,
+                'enable_cancelation'         => true,
+                'route_prefix'               => '',
+                'frontend'                   => '',
+                'enable_concurrent_chunking' => false
             )),
         ));
 
@@ -45,9 +49,11 @@ class RouteLoaderTest extends \PHPUnit_Framework_TestCase
 
         $routeLoader = new RouteLoader(array(
             'cat' => array($cat, array(
-                'enable_progress' => false,
-                'enable_cancelation' => false,
-                'route_prefix' => $prefix
+                'enable_progress'            => false,
+                'enable_cancelation'         => false,
+                'route_prefix'               => $prefix,
+                'frontend'                   => '',
+                'enable_concurrent_chunking' => false
             ))
         ));
 
