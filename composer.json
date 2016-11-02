@@ -52,7 +52,5 @@
 
     "autoload": {
         "psr-0": { "Oneup\\UploaderBundle": "" }
-    },
-
-    "target-dir": "Oneup/UploaderBundle"
+    }
 }
