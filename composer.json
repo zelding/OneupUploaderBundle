@@ -9,12 +9,10 @@
         {
             "name": "Jim Schmid",
             "email": "js@1up.io",
-            "homepage": "http://1up.io",
             "role": "Developer"
         }, {
             "name": "Kristof Dekany",
             "email": "gammaray.zedling@gmail.com",
-            "homepage": "http://lyozsi.net",
             "role": "Developer"
         }
     ],
